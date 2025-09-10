@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive Blog Website">
+  <meta name="keywords" content="blog, responsive, HTML, CSS, JavaScript, articles, portfolio, categories">
+  <meta property="og:title" content="Responsive Blog">
+  <meta property="og:description" content="A modern blog with light/dark theme and comments">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <title>Responsive Blog | MyBlog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">MyBlog</div>
+    <nav id="nav-links" class="nav-links">
+      <a href="index.html" aria-label="Go to Home">Home</a>
+      <a href="about.html" aria-label="Go to About Page">About</a>
+      <a href="blog.html" aria-label="Go to Blog">Blog</a>
+      <a href="contact.html" aria-label="Go to Contact Page">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle Dark/Light Theme">🌙</button>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+  </header>
+
+  <!-- Blog Section -->
+  <main class="blog-container">
+    <h1>Latest Posts</h1>
+    
+    <article class="blog-card">
+      <header>
+        <h2><a href="blog-post1.html">Post 1: Getting Started with Responsive Design</a></h2>
+      </header>
+      <p>Learn the basics of creating a responsive website that adapts to all devices...</p>
+      <footer>
+        <time datetime="2025-09-01">September 1, 2025</time> | <span>by Admin</span>
+      </footer>
+      <a href="blog-post1.html" class="read-more" aria-label="Read full post about Responsive Design">Read More</a>
+    </article>
+
+    <article class="blog-card">
+      <header>
+        <h2><a href="blog-post2.html">Post 2: Dark Mode in Web Design</a></h2>
+      </header>
+      <p>Dark mode has become a trend. Here’s how to implement it effectively with CSS and JavaScript...</p>
+      <footer>
+        <time datetime="2025-09-05">September 5, 2025</time> | <span>by Admin</span>
+      </footer>
+      <a href="blog-post2.html" class="read-more" aria-label="Read full post about Dark Mode">Read More</a>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 MyBlog | Built with HTML, CSS & JavaScript</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

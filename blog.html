@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post | MyBlog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">MyBlog</div>
+    <nav id="nav-links" class="nav-links">
+      <a href="index.html" aria-label="Go to Home">Home</a>
+      <a href="about.html" aria-label="Go to About Page">About</a>
+      <a href="blog.html" class="active" aria-label="Go to Blog">Blog</a>
+      <a href="contact.html" aria-label="Go to Contact Page">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle Dark/Light Theme">🌙</button>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+  </header>
+
+  <!-- Blog Content -->
+  <main class="blog-content">
+    <article>
+      <h1>Blog Post Title</h1>
+      <p>This is the full blog content. You can write detailed paragraphs, include images, code blocks, lists, or tables here.</p>
+
+      <!-- Example Table -->
+      <div class="table-container">
+        <table>
+          <caption>Example Table</caption>
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Description</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Feature">Responsive Design</td>
+              <td data-label="Description">Works on desktop, tablet, and mobile</td>
+              <td data-label="Status">Completed</td>
+            </tr>
+            <tr>
+              <td data-label="Feature">Dark Mode</td>
+              <td data-label="Description">Toggle between light and dark theme</td>
+              <td data-label="Status">In Progress</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Comments Section -->
+      <section class="comments">
+        <h2>Leave a Comment</h2>
+        <form id="comment-form" class="contact-form">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+
+          <label for="email">Your Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+
+          <label for="message">Your Comment</label>
+          <textarea id="message" placeholder="Write your comment here..." required></textarea>
+
+          <button type="submit" class="btn">Post Comment</button>
+        </form>
+
+        <!-- Table to display comments -->
+        <div class="table-container" style="margin-top: 2rem;">
+          <table id="comment-table">
+            <caption>Comments</caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Comments will be appended here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 MyBlog | Built with HTML, CSS & JavaScript</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const form = document.getElementById('comment-form');
+    const tableBody = document.querySelector('#comment-table tbody');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if(name && email && message) {
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+          <td data-label="Name">${name}</td>
+          <td data-label="Email">${email}</td>
+          <td data-label="Comment">${message}</td>
+        `;
+
+        tableBody.appendChild(row);
+
+        // Clear the form
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>

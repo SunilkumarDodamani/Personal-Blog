@@ -1,78 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Unitechie Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="logo">MyBlog</div>
+    <nav id="nav-links" class="nav-links">
+      <a href="index.html" aria-label="Go to Home">Home</a>
+      <a href="about.html" aria-label="Go to About Page">About</a>
+      <a href="blog.html" aria-label="Go to Blog">Blog</a>
+      <a href="contact.html" aria-label="Go to Contact Page">Contact</a>
+      <button id="theme-toggle" aria-label="Toggle Dark/Light Theme">🌙</button>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">☰</button>
+  </header>
 
+  <main>
     <!-- Contact Form -->
-    <div class="contact-form">
-        <h2>Contact Me</h2>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
+    <section class="contact-section">
+      <h1>Get in Touch</h1>
+      <form class="contact-form" action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Contact Me</legend>
 
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+          <label for="name">Name:</label>
+          <input id="name" type="text" name="name" required placeholder="Your Name">
 
-            <div class="form-group">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-            </div>
+          <label for="email">Email:</label>
+          <input id="email" type="email" name="email" required placeholder="you@example.com">
 
-            <div class="form-group">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
+          <label for="phone">Phone:</label>
+          <input id="phone" type="tel" name="phone" pattern="[0-9]{10}" placeholder="1234567890">
 
-            <div class="form-group">
-                <label>Gender:</label>
-                <div class="radio-group">
-                    <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-                </div>
-            </div>
+          <label for="subject">Subject:</label>
+          <input id="subject" type="text" name="subject" required placeholder="Subject">
 
-            <div class="form-group">
-                <label for="interests">Interests:</label>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="coding" name="interests" value="Coding">
-                    <label for="coding">Coding</label>
-                    <input type="checkbox" id="design" name="interests" value="Design">
-                    <label for="design">Design</label>
-                </div>
-            </div>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
 
-            <div class="form-group">
-                <label for="source">How did you hear about me?</label>
-                <select id="source" name="source">
-                    <option value="google">Google</option>
-                    <option value="friends">Friends</option>
-                    <option value="social_media">Social Media</option>
-                </select>
-            </div>
+          <label for="topic">Topic:</label>
+          <select id="topic" name="topic" required>
+            <option value="">-- Select a Topic --</option>
+            <option value="general">General</option>
+            <option value="work">Work Inquiry</option>
+            <option value="feedback">Feedback</option>
+          </select>
 
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+          <fieldset class="preferred-contact">
+            <legend>Preferred Contact:</legend>
+            <label><input type="radio" name="contact" value="email" required> Email</label>
+            <label><input type="radio" name="contact" value="phone"> Phone</label>
+          </fieldset>
 
+          <button type="submit" class="btn">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="map-section">
+      <h2>Find Me Here</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18..."
+        width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Unitechie Solutions Pvt Ltd | All Rights Reserved</p>
+  </footer>
 </body>
 </html>
